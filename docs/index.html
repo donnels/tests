@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+  <title>Dancing Baby</title>
+  <style>
+    /* Add some styling to make the baby dance */
+    .baby {
+      animation: dance 1s infinite;
+    }
+    @keyframes dance {
+      /* Add the keyframes for the dance animation */
+      0% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(10deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Dancing Baby</h1>
+  <img src="baby.gif" class="baby">
+</body>
+</html>
