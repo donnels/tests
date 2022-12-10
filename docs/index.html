@@ -1,28 +1,64 @@
 <!doctype html>
 <html>
 <head>
-  <title>Dancing Baby</title>
-  <style>
-    /* Add some styling to make the baby dance */
-    .baby {
-      animation: dance 1s infinite;
-    }
-    @keyframes dance {
-      /* Add the keyframes for the dance animation */
-      0% {
-        transform: rotate(0deg);
-      }
-      50% {
-        transform: rotate(10deg);
-      }
-      100% {
-        transform: rotate(0deg);
-      }
-    }
-  </style>
+  <title>Rainy Day</title>
 </head>
 <body>
-  <h1>Dancing Baby</h1>
-  <img src="baby.gif" class="baby">
+  <h1>Rainy Day</h1>
+  <canvas id="rain" width="500" height="500"></canvas>
+  <script>
+    // Get the canvas element
+    var canvas = document.getElementById('rain');
+    var ctx = canvas.getContext('2d');
+
+    // Set the fill color for the rain drops
+    ctx.fillStyle = '#00bfff';
+
+    // Create an array to store the rain drops
+    var drops = [];
+
+    // Add some initial rain drops to the array
+    for (var i = 0; i < 100; i++) {
+      drops.push({
+        x: Math.random() * canvas.width, // random x position
+        y: Math.random() * canvas.height, // random y position
+        radius: Math.random() * 2 + 1, // random radius
+        speed: Math.random() * 5 + 1 // random speed
+      });
+    }
+
+    // Draw the rain drops on the canvas
+    function drawRain() {
+      // Clear the canvas
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Loop through the rain drops array
+      for (var i = 0; i < drops.length; i++) {
+        // Get the current rain drop
+        var drop = drops[i];
+
+        // Draw the rain drop on the canvas
+        ctx.beginPath();
+        ctx.arc(drop.x, drop.y, drop.radius, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Update the position of the rain drop
+        drop.y += drop.speed;
+
+        // If the rain drop falls off the bottom of the canvas,
+        // move it back to the top at a random x position
+        if (drop.y > canvas.height) {
+          drop.y = 0;
+          drop.x = Math.random() * canvas.width;
+        }
+      }
+
+      // Repeat the drawRain() function every 10 milliseconds
+      setTimeout(drawRain, 10);
+    }
+
+    // Start the rain animation
+    drawRain();
+  </script>
 </body>
 </html>
