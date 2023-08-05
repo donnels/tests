@@ -4,7 +4,7 @@ import subprocess
 
 GITHUB_USERNAME = "donnels"
 LOCAL_USERNAME = "sean"
-PAT = "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"
+PAT = ""
 
 BASE_URL = "https://api.github.com"
 LOCAL_REPO_DIR = f"/home/{LOCAL_USERNAME}/Documents/Github/{GITHUB_USERNAME}"

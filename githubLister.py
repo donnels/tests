@@ -1,6 +1,6 @@
 GITHUB_USERNAME = "donnels"
 LOCAL_USERNAME = "sean"
-PAT = "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"
+PAT = ""
 #!/usr/bin/env python
 import os
 import requests
