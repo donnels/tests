@@ -1,15 +1,16 @@
 GITHUB_USERNAME = "donnels"
 LOCAL_USERNAME = "sean"
-PAT = "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"
+PAT = "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"
+#!/usr/bin/env python
 import os
 import requests
 import subprocess
 
 # Replace <GITHUB_USERNAME> and <PAT> with your GitHub username and personal access token
 # User and PAT variables
-GITHUB_USERNAME = "donnels"
-LOCAL_USERNAME = "sean"
-PAT = "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"
+GITHUB_USERNAME = "user"
+LOCAL_USERNAME = "User"
+PAT = "github_pat"
 # Set the base URL for the GitHub API
 BASE_URL = 'https://api.github.com'
 # Set the directory where you want to store your local copies of the repositories
